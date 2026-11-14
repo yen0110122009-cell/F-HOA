@@ -320,9 +320,101 @@ function buildAdvancedStudyPack(){
 }
 
 
+const PDF_PACK_ROWS={
+"lesson_buoi10_13_pin_dien_phan":{name:"Buổi 10–13 — Pin điện và điện phân",rows:[
+["Cặp oxi hóa – khử của kim loại là gì?","Dạng oxi hóa (Mn+) và dạng khử (M) của cùng một kim loại tạo thành cặp Mn+/M, với cân bằng Mn+ + ne ⇋ M.","Ví dụ: Al3+/Al; Zn2+/Zn; Cu2+/Cu."],
+["Điện cực ở điều kiện chuẩn là gì?","Điện cực kim loại có nồng độ ion kim loại 1 M và nhiệt độ 25 °C (298 K).","Mỗi cặp oxi hóa – khử thiết lập được một điện cực, ví dụ Zn2+ + 2e ⇋ Zn."],
+["Thế điện cực chuẩn: kí hiệu, đơn vị và quy ước gốc?","Kí hiệu E° (oxi hóa/khử), đơn vị V. Quy ước điện cực hydrogen chuẩn 2H+ + 2e ⇋ H2 có E° = 0.","Thế của điện cực khác được đo bằng chênh lệch điện thế so với điện cực hydrogen chuẩn."],
+["Giá trị E° của Zn2+/Zn và Cu2+/Cu?","E°(Zn2+/Zn) = −0,762 V; E°(Cu2+/Cu) = +0,340 V.","E°(Ag+/Ag) = +0,799 V."],
+["E° càng nhỏ hoặc càng lớn thì tính chất oxi hóa – khử thay đổi thế nào?","E° càng nhỏ: dạng khử càng mạnh, dạng oxi hóa càng yếu. E° càng lớn: dạng khử càng yếu, dạng oxi hóa càng mạnh.","E° đánh giá khả năng khử của dạng khử và khả năng oxi hóa của dạng oxi hóa ở điều kiện chuẩn."],
+["Viết dãy điện hóa của kim loại (dạng oxi hóa và dạng khử).","K+/K, Ca2+/Ca, Na+/Na, Mg2+/Mg, Al3+/Al, Zn2+/Zn, Fe2+/Fe, Ni2+/Ni, Sn2+/Sn, Pb2+/Pb, 2H+/H2, Cu2+/Cu, Ag+/Ag, Au3+/Au.","Từ trái sang phải: tính oxi hóa của ion tăng, tính khử của kim loại giảm."],
+["So sánh Cu và Ag bằng thế điện cực.","E°(Cu2+/Cu) = +0,340 V < E°(Ag+/Ag) = +0,799 V nên Cu khử mạnh hơn Ag; Cu2+ oxi hóa yếu hơn Ag+.",""],
+["Dự đoán chiều phản ứng giữa hai cặp oxi hóa – khử (quy tắc α)?","Chất khử mạnh (cặp có E° nhỏ hơn, đứng trước) tác dụng với chất oxi hóa mạnh (cặp có E° lớn hơn, đứng sau), tạo chất khử yếu và chất oxi hóa yếu.","Ví dụ: 2Ag+ + Cu → Cu2+ + 2Ag."],
+["Khi nào năng lượng phản ứng oxi hóa – khử chuyển thành điện năng?","Khi quá trình oxi hóa và quá trình khử xảy ra trên hai điện cực riêng, electron truyền từ chất khử sang chất oxi hóa qua dây dẫn.","Phản ứng oxi hóa – khử luôn kèm sự chuyển electron."],
+["Pin Galvani có cấu tạo thế nào?","Pin điện hóa gồm hai điện cực, mỗi điện cực ứng với một cặp oxi hóa – khử, thường nối với nhau qua cầu muối.",""],
+["Khi pin điện hóa hoạt động, anode và cathode xảy ra quá trình gì?","Anode (cực âm): xảy ra oxi hóa. Cathode (cực dương): xảy ra khử.","Cathode luôn là nơi xảy ra sự khử."],
+["Công thức sức điện động chuẩn của pin và kết quả của pin Zn–Cu?","E°pin = E°cathode − E°anode. Pin Zn–Cu: 0,340 − (−0,762) = 1,102 V.","Anode: Zn → Zn2+ + 2e. Cathode: Cu2+ + 2e → Cu."],
+["Acquy chì: khái niệm, ưu và nhược điểm?","Acquy (pin thứ cấp) dùng trong giao thông, lưu điện, phát điện. Ưu: dễ sản xuất, giá thấp, ổn định, dễ thu hồi H2SO4 và chì để tái chế. Nhược: nặng, tuổi thọ thấp (khoảng 1 năm), gây ô nhiễm và ngộ độc chì ở làng nghề tái chế.",""],
+["Pin nhiên liệu: khái niệm, nhiên liệu, chất oxi hóa, ưu và nhược điểm?","Chuyển hóa năng thành điện năng nhờ phản ứng oxi hóa – khử giữa nhiên liệu (CH4, C2H5OH, H2…) và O2. Ưu: chỉnh được dòng điện bằng tốc độ cấp nhiên liệu, hiệu suất cao, ít chất thải. Nhược: giá thành cao.",""],
+["Pin mặt trời: cấu tạo, ưu và nhược điểm?","Gồm nhiều tấm vật liệu bán dẫn ghép nối, chuyển quang năng thành điện năng. Ưu: năng lượng sạch, tận dụng năng lượng vô tận. Nhược: sản xuất phức tạp, giá cao, phụ thuộc thời tiết, tấm hết hạn có nguy cơ gây ô nhiễm.",""],
+["Điện phân là gì và đặc điểm của phản ứng điện phân?","Quá trình oxi hóa – khử xảy ra tại các điện cực khi dòng điện một chiều, hiệu điện thế đủ lớn đi qua chất điện li nóng chảy hoặc dung dịch chất điện li. Phản ứng không tự xảy ra mà nhờ điện năng.",""],
+["Trong điện phân, các ion di chuyển về đâu?","Cation di chuyển về cathode (điện cực âm); anion di chuyển về anode (điện cực dương).","Tài liệu gốc ghi nhầm hai lần ‘ion âm’; đúng là cation về cực âm."],
+["Khi điện phân dung dịch, nước tham gia với vai trò nào?","Chất khử (anode): 2H2O → O2 + 4H+ + 4e. Chất oxi hóa (cathode): 2H2O + 2e → H2 + 2OH−.",""],
+["Quy ước cathode/anode trong bình điện phân?","Cathode: quá trình khử, cực âm. Anode: quá trình oxi hóa, cực dương.","Trong pin điện thì ngược dấu: anode là cực âm, cathode là cực dương."],
+["Thứ tự điện phân tại anode và cathode theo nguyên tắc nào?","Anode: chất khử mạnh hơn bị oxi hóa trước. Cathode: chất oxi hóa mạnh hơn bị khử trước (so sánh theo E° hoặc dãy điện hóa).",""],
+["Thứ tự điện phân anion ở anode và các anion coi như không bị điện phân?","I− > Br− > Cl−. Không bị điện phân: CO3 2−, PO4 3−, SO4 2−, NO3 −, F−, ClO4 −.",""],
+["Thứ tự điện phân cation ở cathode?","Au3+ > Ag+ > Hg2+ > Cu2+ > H+ > H2O.",""],
+["Điện phân dung dịch CuSO4 điện cực trơ: các quá trình và phương trình?","Anode (+): H2O → 1/2 O2 + 2H+ + 2e. Cathode (−): Cu2+ + 2e → Cu. Tổng: CuSO4 + H2O → Cu + 1/2 O2 + H2SO4 (đpdd).",""],
+["Kim loại nào sản xuất bằng điện phân dung dịch, kim loại nào bằng điện phân nóng chảy?","Kim loại trung bình – yếu: điện phân dung dịch (ví dụ ZnSO4 + H2O → Zn + 1/2 O2 + H2SO4). Kim loại mạnh (Na, K, Mg, Ca, Al…): điện phân nóng chảy hợp chất ion.",""],
+["Sản xuất nhôm bằng điện phân nóng chảy gồm các giai đoạn nào?","Giai đoạn 1: tinh chế quặng bauxite (Al2O3.2H2O) thu Al2O3. Giai đoạn 2: điện phân Al2O3 nóng chảy. Anode: 2O2− → O2 + 4e. Cathode: Al3+ + 3e → Al. PTHH: 2Al2O3 → 4Al + 3O2.",""],
+["Tinh chế kim loại bằng điện phân thực hiện thế nào?","Điện phân dung dịch muối hoặc phức chất của chính kim loại đó, với anode làm bằng kim loại thô tương ứng. Áp dụng cho Zn, Ni, Co, Cu, Ag, Au…",""],
+["Mạ điện dựa trên nguyên lý nào và bình mạ gồm gì?","Ion kim loại bị khử tạo lớp kim loại rắn phủ bề mặt vật, để trang trí hoặc chống ăn mòn. Bình mạ gồm dung dịch muối của kim loại mạ, vật cần mạ và thanh kim loại mạ. Kim loại mạ thường: Cr, Ni, Cu, Au, Ag, Pt.",""]
+]},
+"lesson_buoi16_polymer":{name:"Buổi 16 — Đại cương polymer và vật liệu polymer",rows:[
+["Polymer, monomer, mắt xích và hệ số n là gì?","Polymer: hợp chất phân tử khối lớn do nhiều mắt xích liên kết. Monomer: phân tử nhỏ phản ứng tạo polymer. n: hệ số (độ) polymer hóa.","nCH2=CH2 → (−CH2−CH2−)n; mắt xích −CH2−CH2−, monomer CH2=CH2."],
+["Quy tắc gọi tên polymer?","Tên polymer = poly + tên monomer; đặt monomer trong ngoặc đơn nếu tên gồm hai cụm từ.","Ví dụ: poly(vinyl chloride)."],
+["Nêu các polymer thường gặp và monomer/cấu tạo mắt xích.","PE: −CH2−CH2−. PVC: −CH2−CHCl−. PS: −CH2−CH(C6H5)−. PPF: poly(phenol formaldehyde). Polybuta-1,3-diene: −CH2−CH=CH−CH2−. Polyisoprene: −CH2−C(CH3)=CH−CH2−. Capron: −NH−[CH2]5−CO−. Nylon-6,6: −NH−[CH2]6−NH−CO−[CH2]4−CO−.",""],
+["Tính chất vật lí của polymer phụ thuộc vào gì?","Phụ thuộc cấu tạo; thể hiện qua tính dẻo, tính đàn hồi, cách nhiệt, cách điện…","Nhiều polymer nhiệt dẻo thường gặp được đánh số tái chế 1–7 (PET, HDPE, V, LDPE, PP, PS, Other)."],
+["Phản ứng cắt mạch polymer là gì? Nêu ví dụ.","Polymer bị phân cắt (thành monomer hoặc mạch ngắn) bởi nhiệt, tác nhân hóa học, sinh học. Ví dụ: polystyrene nhiệt phân thu styrene; polyamide thủy phân hoàn toàn trong acid/base thu amino acid; tinh bột, cellulose thủy phân trong acid hoặc enzyme thu glucose.","Sơ đồ trong tài liệu vẽ chiều styrene → polystyrene là chiều trùng hợp; chiều cắt mạch là ngược lại."],
+["Phản ứng tăng mạch polymer là gì? Ví dụ?","Các mạch polymer nối với nhau thành mạch dài hơn hoặc mạng lưới khi có nhiệt độ, xúc tác… Ví dụ: lưu hóa cao su (cao su thô + S, t° → cao su lưu hóa có cầu nối −S−S−).",""],
+["Phản ứng giữ nguyên mạch polymer là gì? Ví dụ?","Phản ứng xảy ra ở nhóm thế hoặc liên kết đôi mà không đổi chiều dài mạch. Ví dụ: poly(vinyl acetate) + nNaOH → poly(vinyl alcohol) + nCH3COONa.",""],
+["Trùng hợp là gì, monomer cần đặc điểm gì?","Kết hợp nhiều phân tử nhỏ giống nhau hoặc tương tự thành polymer. Monomer thường có liên kết đôi (CH2=CHR) hoặc vòng.","Ví dụ: nCH2=CH2 → PE; caprolactam → tơ capron (xt, t°)."],
+["Trùng ngưng là gì, monomer cần đặc điểm gì?","Kết hợp nhiều monomer thành polymer đồng thời giải phóng phân tử nhỏ (thường là nước). Monomer phải có ít nhất hai nhóm chức có khả năng phản ứng.",""],
+["Tổng hợp nylon-6,6 bằng phản ứng nào?","nH2N[CH2]6NH2 + nHOOC[CH2]4COOH → (−NH[CH2]6NHCO[CH2]4CO−)n + 2nH2O (hexamethylene diamine + adipic acid).","Khối lượng một mắt xích là 226; tài liệu ghi M = 266 là nhầm."],
+["Chất dẻo và tính dẻo là gì? Thành phần chất dẻo?","Chất dẻo là vật liệu polymer có tính dẻo. Tính dẻo: bị biến dạng khi chịu nhiệt, áp lực và giữ biến dạng khi thôi tác dụng. Thành phần: polymer chính, ngoài ra có chất độn, chất hóa dẻo, chất tạo màu…",""],
+["Polymer làm chất dẻo thông dụng, điều chế thế nào? PE, PP, PVC, PS khác nhau ở đâu?","PE, PP, PVC, PS, poly(methyl methacrylate)… điều chế bằng trùng hợp. Monomer CH2=CHR: R = H → PE; CH3 → PP; Cl → PVC; C6H5 → PS.",""],
+["PPF được điều chế thế nào?","Trùng ngưng phenol với formaldehyde: n C6H5OH + nHCHO → poly(phenol formaldehyde) + nH2O (xúc tác H+, t°).",""],
+["Ứng dụng của PE, PP, PVC, PS, poly(methyl methacrylate)?","PE: túi, màng bọc, chai lọ, đồ chơi. PP: bao gói, hộp, ống nước, chi tiết ô tô. PVC: giày ủng, rèm, khung cửa, sàn, ống nước, vỏ cáp điện, vải giả da. PS: bao gói thực phẩm, hộp xốp, cách nhiệt. Poly(methyl methacrylate): thủy tinh hữu cơ (kính máy bay, kính xây dựng, kính bảo hiểm, bể cá).",""],
+["Ô nhiễm rác thải nhựa và biện pháp giảm thiểu?","Rác nhựa không tự phân hủy sinh học, nhiều thế kỷ mới phân hủy, gây hại sinh vật biển. Biện pháp: tái chế, tái sử dụng; hạn chế bao bì nhựa, túi nylon; mang túi khi mua sắm; dùng vật liệu phân hủy sinh học; phân loại rác tại nguồn.",""],
+["Vật liệu composite: khái niệm và thành phần?","Vật liệu tổ hợp từ hai hay nhiều vật liệu khác nhau, có tính chất vượt trội vật liệu ban đầu. Gồm vật liệu cốt (đảm bảo tính cơ học; dạng sợi hoặc hạt) và vật liệu nền (liên kết các cốt, tạo tính thống nhất).",""],
+["Ứng dụng của composite cốt sợi và cốt hạt?","Cốt sợi: thân, vỏ máy bay, tàu thuyền, thân xe đua, khung xe đạp, bồn chứa, ống dẫn. Cốt hạt: gỗ nhựa, bê tông nhựa, gốm chất lượng cao.",""],
+["Tơ là gì và phân loại?","Vật liệu polymer dạng sợi mảnh, bền, mạch không phân nhánh xếp song song. Tơ tự nhiên: tằm, len, bông. Tơ tổng hợp: polyamide (capron, nylon-6,6), nitron. Tơ bán tổng hợp (nhân tạo): visco, cellulose acetate.",""],
+["Điều chế tơ capron và tơ nitron?","Capron (nylon-6): nH2N−[CH2]5−COOH → (−NH[CH2]5CO−)n + nH2O (hoặc trùng hợp caprolactam). Nitron (olon): nCH2=CH−CN → (−CH2−CH(CN)−)n.",""],
+["Cao su là gì, tính đàn hồi là gì?","Cao su là vật liệu polymer có tính đàn hồi: biến dạng khi chịu lực và trở lại dạng ban đầu khi thôi tác dụng. Gồm cao su tự nhiên và tổng hợp.",""],
+["Cao su thiên nhiên: cấu tạo, tính chất, ứng dụng?","Lấy từ mủ cây cao su; mắt xích isoprene, liên kết đôi dạng cis. Đàn hồi, không dẫn điện, chịu mài mòn, không thấm khí và nước, không tan trong nước/ethanol nhưng tan trong xăng, benzene. Cộng H2, HCl, Cl2…; tác dụng với lưu huỳnh tạo cao su lưu hóa. Dùng làm lốp xe, băng tải, ống dẫn, gioăng, đệm, gối.",""],
+["Điều chế cao su buna, buna-S, buna-N?","Buna: buta-1,3-diene (Na, t°). Buna-S: buta-1,3-diene + styrene (t°, p, xt). Buna-N: buta-1,3-diene + acrylonitrile.",""],
+["Điều chế cao su isoprene và chloroprene?","Isoprene: trùng hợp 2-methylbuta-1,3-diene (CH2=C(CH3)−CH=CH2). Chloroprene: trùng hợp CH2=CH−C(Cl)=CH2.",""],
+["Tính chất và ứng dụng chung của cao su tổng hợp?","Đàn hồi tốt, bền cao, chống lão hóa tốt, giá thấp. Dùng trong xây dựng, giao thông (lốp xe, đệm chống va đập, gối cầu, khe co giãn), máy móc (băng tải, dây truyền động), y tế (găng tay nitrile).",""],
+["Keo dán là gì và bản chất kết dính?","Vật liệu kết dính bề mặt hai vật liệu rắn mà không làm biến đổi bản chất của chúng; tạo lớp màng mỏng bám chắc vào hai mảnh vật liệu.",""],
+["Nhựa vá săm là gì?","Dung dịch dạng keo của cao su hòa tan trong dung môi hữu cơ (xăng, toluene, xylene…), dùng vá chỗ thủng của săm hoặc lốp.",""],
+["Keo dán epoxy gồm những thành phần nào, ứng dụng?","Thành phần chính: hợp chất hữu cơ có hai nhóm epoxy ở hai đầu. Chất đóng rắn: thường là amine, ví dụ H2NCH2CH2NHCH2CH2NH2. Dán kim loại, gỗ, thủy tinh, chất dẻo, bê tông… (ô tô, máy bay, xây dựng).",""],
+["Keo poly(urea-formaldehyde): điều chế, ứng dụng, lưu ý?","nH2N−CO−NH2 + nCH2O → (−NH−CO−NH−CH2−)n + nH2O (H+, t°). Dùng làm chất kết dính gỗ ván ép, chất dẻo. Khi dùng cần thêm chất đóng rắn (NH4Cl, oxalic acid…) để tạo polymer mạng không gian.",""]
+]},
+"lesson_buoi19_dai_cuong_kim_loai":{name:"Buổi 19 — Đại cương kim loại",rows:[
+["Đặc điểm cấu tạo nguyên tử kim loại?","Thường có ít electron lớp ngoài cùng (1, 2 hoặc 3e). Trong một chu kì, kim loại có bán kính lớn hơn, điện tích hạt nhân và độ âm điện nhỏ hơn phi kim nên dễ nhường electron.",""],
+["Xác định vị trí nguyên tố trong bảng tuần hoàn dựa vào đâu?","Ô = số hiệu nguyên tử Z; chu kì = số lớp electron; nhóm = số electron hóa trị.","Ví dụ: ion R2+ có cấu hình 1s2…3p63d6 thì R là Fe (3d64s2), chu kì 4, nhóm VIIIB."],
+["Cấu tạo tinh thể kim loại?","Ở điều kiện thường kim loại đều rắn, có cấu tạo tinh thể (trừ Hg lỏng). Gồm cation kim loại xếp trật tự cùng electron hóa trị tự do chuyển động trong toàn mạng.",""],
+["Ba kiểu mạng tinh thể kim loại phổ biến và ví dụ?","Lập phương tâm khối: Li, Na, K, Ba, V, Mo. Lập phương tâm diện: Ca, Sr, Cu, Ag, Au, Al. Lục phương: Be, Mg, Zn.",""],
+["Liên kết kim loại là gì? Khác liên kết ion thế nào?","Liên kết hình thành từ lực hút tĩnh điện giữa cation kim loại và electron hóa trị tự do trong mạng tinh thể. Liên kết ion cũng là lực hút tĩnh điện nhưng giữa cation và anion.",""],
+["Giải thích tính dẻo của kim loại?","Các cation kim loại trượt lên nhau mà không tách rời nhờ lực hút với electron tự do; biểu hiện là dễ rèn, dát mỏng, kéo sợi. Thứ tự: Au > Ag > Al > Cu > Sn.",""],
+["Giải thích tính dẫn điện; thứ tự và ảnh hưởng nhiệt độ?","Electron tự do chuyển động thành dòng có hướng dưới điện trường. Ag > Cu > Au > Al > Fe (Al, Cu hay dùng làm dây dẫn). Nhiệt độ tăng thì dẫn điện giảm do cation dao động mạnh cản electron.",""],
+["Giải thích tính dẫn nhiệt?","Electron tự do ở vùng nóng có động năng lớn di chuyển sang vùng lạnh, truyền năng lượng cho cation. Kim loại dẫn điện tốt thường dẫn nhiệt tốt (nhôm làm dụng cụ nhà bếp, tản nhiệt).",""],
+["Giải thích tính ánh kim?","Electron tự do phản xạ hầu hết tia sáng nhìn thấy nên kim loại sáng lấp lánh. Thực tế nhiều kim loại mờ vì có lớp oxide (gỉ sắt, Al2O3).",""],
+["Các kim loại đặc biệt về khối lượng riêng, độ cứng, nhiệt độ nóng chảy?","Nhẹ nhất: Li (0,534 g/cm3); nặng nhất: Os (22,6 g/cm3); D < 5 là kim loại nhẹ, D ≥ 5 là nặng. Cứng nhất: Cr (Cr > W > Fe > Cs > Cu); mềm nhất: kim loại kiềm (K, Rb, Na, Cs). Nóng chảy thấp nhất: Hg (−39 °C); cao nhất: W (3410 °C, dây tóc bóng đèn).",""],
+["Tính chất hóa học chung của kim loại và phản ứng với phi kim?","Tính khử: M → Mn+ + ne. Với O2 tạo oxide (3Al + 3O2 → 2Al2O3 hoặc 4Al + 3O2 → 2Al2O3); với halogen tạo muối (2Al + 3Cl2 → 2AlCl3); Hg + S → HgS (thu hồi thủy ngân rơi vãi).",""],
+["Kim loại phản ứng với nước theo mức độ nào?","E° < −0,413 V: K, Na, Ba, Ca, Li phản ứng nhanh ở nhiệt độ thường; Mg chậm, nhanh khi đun nóng; Al dừng nhanh vì hydroxide không tan bao phủ; Zn, Fe khử nước ở nhiệt độ cao. E° > −0,413 V: Ni, Sn, Pb, Cu, Ag, Au không phản ứng.",""],
+["Kim loại tác dụng với dung dịch muối theo quy tắc nào? Ngoại lệ?","Kim loại không tan trong nước, có E° nhỏ hơn thì khử được ion kim loại có E° lớn hơn (2AgNO3 + Cu → Cu(NO3)2 + 2Ag). Ngoại lệ: K, Na, Ba, Ca, Li phản ứng với nước trước (Na + CuSO4: 2Na + 2H2O → 2NaOH + H2; rồi 2NaOH + CuSO4 → Cu(OH)2↓ + Na2SO4).",""],
+["Kim loại tác dụng với dung dịch acid HCl và H2SO4 loãng?","Kim loại có E° < 0 khử được H+ tạo H2 (Fe + 2HCl → FeCl2 + H2). Kim loại E° > 0 như Cu, Ag không phản ứng. Fe tạo muối Fe(II).",""],
+["Kim loại với H2SO4 đặc, và hiện tượng thụ động hóa?","Hầu hết kim loại (trừ Au, Pt) phản ứng, tạo muối sulfate, SO2 và H2O (Cu + 2H2SO4 đặc → CuSO4 + SO2 + 2H2O; 2Fe + 6H2SO4 đặc, t° → Fe2(SO4)3 + 3SO2 + 6H2O). Al, Fe, Cr bị thụ động trong HNO3 đặc nguội và H2SO4 đặc nguội do tạo màng oxide trơ.","Vì vậy dùng bình Al, Fe, Cr để chở sulfuric acid đặc."],
+["Nguyên tắc tách kim loại khỏi hợp chất và hai giai đoạn từ quặng?","Khử cation kim loại thành nguyên tử: Mn+ + ne → M. Hai giai đoạn: xử lí quặng (nghiền, tuyển, hòa tan, chuyển hóa) để có hợp chất kim loại; rồi dùng nhiệt luyện, thủy luyện hoặc điện phân.",""],
+["Chọn phương pháp tách theo độ hoạt động kim loại?","Mạnh (K, Ba, Ca, Na, Mg, Al): điện phân nóng chảy. Trung bình (Zn, Fe, Ni, Sn, Pb): nhiệt luyện. Yếu (Cu, Hg, Ag, Pt, Au): thủy luyện, điện phân dung dịch.",""],
+["Nhiệt luyện là gì?","Khử oxide kim loại hoạt động trung bình và yếu (Zn, Fe, Sn, Pb, Cu…) bằng C, CO, H2, Al ở nhiệt độ cao; có thể đốt quặng thành oxide trước (2ZnS + 3O2 → 2ZnO + 2SO2).","CO không khử được oxide kim loại mạnh (Na2O, CaO, K2O, MgO, Al2O3)."],
+["Thủy luyện là gì? Ví dụ?","Hòa tan kim loại hoặc hợp chất của kim loại yếu (Cu, Hg, Ag, Au…) bằng dung dịch thích hợp (H2SO4, NaOH, NaCN), rồi khử ion bằng kim loại mạnh hơn: Fe + CuSO4 → FeSO4 + Cu.",""],
+["Tách kim loại mạnh (nhóm IA, IIA, Al) bằng cách nào?","Điện phân nóng chảy halide hoặc oxide; tốn năng lượng nhưng sản phẩm có độ tinh khiết cao.",""],
+["Quy trình và lí do tái chế kim loại?","Quặng cạn kiệt, nhu cầu tăng, phế thải nhiều; tái chế tăng giá trị kinh tế, bảo vệ tài nguyên, môi trường. Quy trình: thu gom → phân loại → xử lí sơ bộ → phối trộn phế liệu → nấu chảy → tinh chế → đúc → chế tạo → gia công.","Tinh chế quặng không thuộc quy trình tái chế."],
+["Ứng dụng dựa trên tính chất vật lí: W, Cr, Pb/Sn/Cd, Cu/Al, vàng/bạc?","W (nóng chảy cao): dây tóc bóng đèn. Cr (cứng): cắt thủy tinh, mạ. Pb, Sn, Cd (nóng chảy thấp): dây cầu chì. Cu, Al (dẫn điện tốt): dây dẫn điện. Au, Ag (dẻo, ánh kim): trang sức, nha khoa.",""],
+["Kim loại tồn tại dạng đơn chất trong tự nhiên, kim loại phổ biến trong vỏ Trái Đất?","Chủ yếu đơn chất: Ag, Au. Phổ biến nhất: Al (17% khối lớp rắn), sau đó Fe. Ion nhiều nhất trong nước biển: Na+.",""],
+["Thành phần các quặng chính của Al và Fe?","Bauxite: Al2O3.2H2O. Sắt: magnetite Fe3O4, hematite Fe2O3, siderite FeCO3, pyrite FeS2; hàm lượng Fe cao nhất ở magnetite.",""],
+["Điều chế Na, Ca, Al, Mg trong công nghiệp và các cực?","Điện phân nóng chảy. Cathode: ion kim loại bị khử (Na+ + e → Na); anode: anion bị oxi hóa (2Cl− → Cl2 + 2e).",""],
+["Điều chế Zn từ ZnS, Fe từ quặng, Au từ quặng?","Zn: ZnS → ZnO (đốt) → Zn (C, t°): nhiệt luyện. Gang: CO khử Fe2O3/Fe3O4: nhiệt luyện. Au: quặng + O2 + KCN + H2O → K[Au(CN)2], rồi + Zn → Au: thủy luyện.",""],
+["Mẹo kiểm tra nhanh các dạng bài đại cương kim loại?","Cu + dung dịch FeSO4: không phản ứng. Fe + dung dịch Cu2+: Fe tan, Cu bám, không có khí. Fe + HCl tạo FeCl2 (không phải FeCl3). Cho Na vào dung dịch muối Cu2+: có H2 và Cu(OH)2↓. Điện phân dung dịch chỉ điều chế được kim loại yếu/trung bình.",""]
+]}
+};
+function buildPdfPack(){const out={};for(const [lid,L] of Object.entries(PDF_PACK_ROWS)){out[lid]={id:lid,name:L.name,createdAt:'2026-11-14T00:00:00.000Z',cards:L.rows.map((r,i)=>({id:lid+'_card_'+String(i+1).padStart(3,'0'),lessonId:lid,question:r[0],answer:r[1],explanation:r[2]||'',hidden:false,srs:{branch:'new',step:0,dueAt:null,lastReviewedAt:null,history:[]}}))};}return out;}
+
 function mergeStudyPack(target){
   let changed=false;
-  for(const item of Object.values({...IMPORTED_STUDY_PACK,...buildAdvancedStudyPack()})){
+  for(const item of Object.values({...IMPORTED_STUDY_PACK,...buildAdvancedStudyPack(),...buildPdfPack()})){
     if(!target.lessons.some(l=>l.id===item.id)){target.lessons.push({id:item.id,name:item.name,createdAt:item.createdAt});changed=true;}
     const known=new Set(target.cards.map(c=>c.id));
     for(const c of item.cards)if(!known.has(c.id)){target.cards.push(structuredClone(c));known.add(c.id);changed=true;}
